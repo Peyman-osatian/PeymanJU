@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class QuestionViewController: UIViewController {
 
@@ -29,6 +30,7 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         questionLabel.clipsToBounds = true
         questionLabel.layer.cornerRadius = 20
         var buttons = [buttonAnswerA, butoonAnswerB, buttonAnswerC, buttonAnswerD]
@@ -95,7 +97,7 @@ class QuestionViewController: UIViewController {
         haveWon = true
         rightAnswers += 1
         button.backgroundColor = .green
-        let alertController = UIAlertController (title:"FISH", message : "YEAAAAAAAA It's correct", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController (title:"RIGHT", message : "YEAAAAAAAA It's correct", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "YES", style : UIAlertAction.Style.default, handler: { [weak self] (_) in
             self?.goToNextScreen()
         }))
@@ -104,7 +106,9 @@ class QuestionViewController: UIViewController {
     
     private func goToNextScreen() {
         guard questions.isEmpty == false,
-                let questionViewController = storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController else {
+                let questionViewController = storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController
+            else {
+            saveGameResult()
             performSegue(withIdentifier: "ResultView", sender: nil)
             return
 
@@ -115,6 +119,16 @@ class QuestionViewController: UIViewController {
         navigationController?.pushViewController(questionViewController, animated: true)
     }
     
+    private func saveGameResult() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        if let gameResult = NSEntityDescription.insertNewObject(forEntityName: "GameResult", into: managedObjectContext) as? GameResult {
+            gameResult.numberOfQuestions = Int32(numberOfQuestions)
+            gameResult.rightAnswers = Int32(rightAnswers)
+            gameResult.date = Date()
+            appDelegate.saveContext()
+        }
+    }
     
     // MARK: - Navigation
 

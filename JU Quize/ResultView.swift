@@ -23,7 +23,7 @@ class ResultView: UIView {
     }
     
     private func setupView() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.text = NSLocalizedString("Your Result", comment: "Result Title")
@@ -37,6 +37,11 @@ class ResultView: UIView {
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
         resultLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 20).isActive = true
         resultLabel.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor).isActive = true
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 20).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: resultLabel.centerXAnchor).isActive = true
         
         button.setTitleColor(.blue, for: .normal)
         button.setTitle(NSLocalizedString("back", comment: "result button title"), for: .normal)

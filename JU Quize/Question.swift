@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct Question {
-    enum QuestionType : String {
+struct Question: Decodable {
+    enum QuestionType : String, Decodable {
         case multiple
     }
-    enum Difficulty :String {
+    enum Difficulty :String, Decodable {
         case easy, medium ,hard
     }
     let category : String
     let type : QuestionType
-    let Difficulty : Difficulty
+    let difficulty : Difficulty
     let question : String
     let correctAnswer: String
     let incorrectAnswers : [String]
