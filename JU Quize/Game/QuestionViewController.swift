@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class QuestionViewController: UIViewController {
 
@@ -17,7 +16,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var butoonAnswerB: UIButton!
     @IBOutlet weak var buttonAnswerA: UIButton!
     
-    
+    private let gameResultDatabaseManager = GameResultDatabaseManager()
     private var haveWon = false
     var questions: [Question] = [] {
         didSet {
@@ -38,14 +37,14 @@ class QuestionViewController: UIViewController {
             button?.layer.cornerRadius = 20
         }
         
-        questionLabel.text = question?.question
+        questionLabel.text = question?.question.htmlDecoded
         buttons.shuffle()
         let correctButton = buttons.removeFirst()
-        correctButton?.setTitle(question?.correctAnswer, for : .normal)
+        correctButton?.setTitle(question?.correctAnswer.htmlDecoded, for : .normal)
         
         question?.incorrectAnswers.forEach({ (answer) in
             let button = buttons.removeFirst()
-            button?.setTitle(answer,for: .normal)
+            button?.setTitle(answer.htmlDecoded,for: .normal)
             })
     }
     
@@ -120,13 +119,8 @@ class QuestionViewController: UIViewController {
     }
     
     private func saveGameResult() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
-        if let gameResult = NSEntityDescription.insertNewObject(forEntityName: "GameResult", into: managedObjectContext) as? GameResult {
-            gameResult.numberOfQuestions = Int32(numberOfQuestions)
-            gameResult.rightAnswers = Int32(rightAnswers)
-            gameResult.date = Date()
-            appDelegate.saveContext()
+        if gameResultDatabaseManager.create(withNumbersOfQuestions: numberOfQuestions, andRightAnswers: rightAnswers) != nil {
+            gameResultDatabaseManager.save()
         }
     }
     
