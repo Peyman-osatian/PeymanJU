@@ -19,6 +19,7 @@ class CameraViewController: UIViewController {
         
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = false
         view.addSubview(imageView)
         
         imageView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true

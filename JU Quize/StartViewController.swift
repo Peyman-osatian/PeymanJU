@@ -73,10 +73,10 @@ class StartViewController: UIViewController {
     @IBAction func exampleButtonHandler(_ sender: Any) {
         //let scrollViewController = ExampleScrollViewController()
        // navigationController?.pushViewController(scrollViewController, animated: true)
-        //let textScrollViewController = TextScrollViewController()
-        //navigationController?.pushViewController(textScrollViewController, animated: true)
-        let cameraViewController = CameraViewController()
-        navigationController?.pushViewController(cameraViewController, animated: true)
+        let textScrollViewController = TextScrollViewController()
+        navigationController?.pushViewController(textScrollViewController, animated: true)
+        //let cameraViewController = CameraViewController()
+        //navigationController?.pushViewController(cameraViewController, animated: true)
     }
 }
 
