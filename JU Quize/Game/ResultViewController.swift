@@ -25,6 +25,12 @@ class ResultViewController: UIViewController {
             .touchUpInside)
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        resultView.startAnimation()
+    }
+    
     @objc private func backButtonHandler () {
         navigationController?.popToRootViewController(animated: true)
     }

@@ -17,7 +17,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.isEnabled = false
-        downloadQuestions(amount: 5)
+        downloadQuestions(amount: 1)
         nameTextField.placeholder = "Your Name"
         nameTextField.delegate = self
         nameTextField.returnKeyType = .done
