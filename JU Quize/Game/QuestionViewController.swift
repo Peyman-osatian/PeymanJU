@@ -88,23 +88,31 @@ class QuestionViewController: UIViewController {
     
     private func showWrongAnswerAlert(button:UIButton){
         haveWon = false
-        button.backgroundColor = .red
-        let alertController = UIAlertController (title:"WRONG😳", message : "maybe next time ..", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "oh no ...", style : UIAlertAction.Style.default, handler: { [weak self] (_) in
-            self?.goToNextScreen()
-        }))
-        present(alertController, animated: true,completion:nil)
+        UIView.transition(with: button, duration: 1.3, options: [.transitionCurlDown], animations: {
+            button.backgroundColor = .red
+        }) { (_) in
+            let alertController = UIAlertController (title:"WRONG😳", message : "maybe next time ..", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "oh no ...", style : UIAlertAction.Style.default, handler: { [weak self] (_) in
+                self?.goToNextScreen()
+            }))
+            self.present(alertController, animated: true,completion:nil)
+        }
+
     }
     
     private func showRightAnswerAlert(button:UIButton){
         haveWon = true
         rightAnswers += 1
-        button.backgroundColor = .green
-        let alertController = UIAlertController (title:"RIGHT", message : "YEAAAAAAAA It's correct", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "YES", style : UIAlertAction.Style.default, handler: { [weak self] (_) in
-            self?.goToNextScreen()
-        }))
-        present(alertController, animated: true,completion:nil)
+        UIView.transition(with: button, duration: 1.3, options: [.transitionCurlUp], animations: {
+            button.backgroundColor = .green
+        }) { (_) in
+            let alertController = UIAlertController (title:"RIGHT", message : "YEAAAAAAAA It's correct", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "YES", style : UIAlertAction.Style.default, handler: { [weak self] (_) in
+                self?.goToNextScreen()
+            }))
+            self.present(alertController, animated: true,completion:nil)
+        }
+
     }
     
     private func goToNextScreen() {

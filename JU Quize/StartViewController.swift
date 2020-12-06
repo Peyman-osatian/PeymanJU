@@ -17,7 +17,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startButton.isEnabled = false
-        downloadQuestions(amount: 1)
+        downloadQuestions(amount: 5)
         nameTextField.placeholder = "Your Name"
         nameTextField.delegate = self
         nameTextField.returnKeyType = .done
@@ -71,12 +71,12 @@ class StartViewController: UIViewController {
    
 
     @IBAction func exampleButtonHandler(_ sender: Any) {
-        //let scrollViewController = ExampleScrollViewController()
-       // navigationController?.pushViewController(scrollViewController, animated: true)
+        let scrollViewController = ExampleScrollViewController()
+        navigationController?.pushViewController(scrollViewController, animated: true)
         //let textScrollViewController = TextScrollViewController()
         //navigationController?.pushViewController(textScrollViewController, animated: true)
-        let cameraViewController = CameraViewController()
-        navigationController?.pushViewController(cameraViewController, animated: true)
+//        let cameraViewController = CameraViewController()
+//        navigationController?.pushViewController(cameraViewController, animated: true)
     }
 }
 
