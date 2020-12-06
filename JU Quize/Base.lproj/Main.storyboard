@@ -52,12 +52,21 @@
                                     <action selector="exampleButtonHandler:" destination="bta-fL-YU4" eventType="touchUpInside" id="LDD-9z-gQZ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-4l-0NT">
+                                <rect key="frame" x="20" y="128" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4nI-iX-TSa" firstAttribute="top" secondItem="Tt0-0N-PFR" secondAttribute="bottom" constant="20" id="5Cg-F4-ryR"/>
+                            <constraint firstItem="2uw-4l-0NT" firstAttribute="top" secondItem="n50-Iu-iMM" secondAttribute="top" constant="40" id="8Is-FN-RS7"/>
+                            <constraint firstItem="n50-Iu-iMM" firstAttribute="trailing" secondItem="2uw-4l-0NT" secondAttribute="trailing" constant="20" id="ENg-69-JnM"/>
                             <constraint firstItem="S1t-V9-KAd" firstAttribute="centerY" secondItem="513-s9-dWB" secondAttribute="centerY" id="WE7-xo-Mwx"/>
                             <constraint firstItem="Tt0-0N-PFR" firstAttribute="centerX" secondItem="S1t-V9-KAd" secondAttribute="centerX" id="WIs-7k-MuZ"/>
+                            <constraint firstItem="2uw-4l-0NT" firstAttribute="centerX" secondItem="513-s9-dWB" secondAttribute="centerX" id="c4L-HA-hdz"/>
+                            <constraint firstItem="2uw-4l-0NT" firstAttribute="leading" secondItem="n50-Iu-iMM" secondAttribute="leading" constant="20" id="icm-Nn-WpN"/>
                             <constraint firstItem="Tt0-0N-PFR" firstAttribute="top" secondItem="S1t-V9-KAd" secondAttribute="bottom" constant="20" id="qfS-li-aRq"/>
                             <constraint firstItem="4nI-iX-TSa" firstAttribute="centerX" secondItem="Tt0-0N-PFR" secondAttribute="centerX" id="xAf-23-cd5"/>
                             <constraint firstItem="S1t-V9-KAd" firstAttribute="centerX" secondItem="513-s9-dWB" secondAttribute="centerX" id="xgu-J0-D52"/>
@@ -66,6 +75,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yFI-T0-4MM"/>
                     <connections>
+                        <outlet property="nameTextField" destination="2uw-4l-0NT" id="40G-kN-m9P"/>
                         <outlet property="startButton" destination="S1t-V9-KAd" id="C3X-zO-ZBB"/>
                     </connections>
                 </viewController>
