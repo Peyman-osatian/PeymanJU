@@ -27,17 +27,59 @@ class JU_QuizeUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let yourNameTextField = app.textFields["Your Name"]
+        yourNameTextField.tap()
+        yourNameTextField.tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Click Me"]/*[[".buttons[\"Click Me\"].staticTexts[\"Click Me\"]",".staticTexts[\"Click Me\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Highscore"]/*[[".buttons[\"Highscore\"].staticTexts[\"Highscore\"]",".staticTexts[\"Highscore\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["JU_Quize.HighscoreTableView"].buttons["Back"].tap()
+        
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
+    func testGame() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        print(app.debugDescription)
+        app.buttons["Start"].tap()
+        
+        var rightAnswers = 0
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["YEAAAAAAAA It's correct"].exists {
+            rightAnswers += 1
         }
+        app.alerts.buttons.firstMatch.tap()
+        
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["YEAAAAAAAA It's correct"].exists {
+            rightAnswers += 1
+        }
+        app.alerts.buttons.firstMatch.tap()
+        
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["YEAAAAAAAA It's correct"].exists {
+            rightAnswers += 1
+        }
+        app.alerts.buttons.firstMatch.tap()
+        
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["YEAAAAAAAA It's correct"].exists {
+            rightAnswers += 1
+        }
+        app.alerts.buttons.firstMatch.tap()
+        
+        app.buttons.firstMatch.tap()
+        XCTAssertEqual(app.alerts.count, 1)
+        if app.alerts.staticTexts["YEAAAAAAAA It's correct"].exists {
+            rightAnswers += 1
+        }
+        app.alerts.buttons.firstMatch.tap()
+        XCTAssertTrue(app.staticTexts["Your Result"].exists)
+        XCTAssertTrue(app.staticTexts["🤩 You answered \(rightAnswers) right from 5 Questions"].exists)
     }
 }

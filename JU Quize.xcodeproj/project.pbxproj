@@ -11,6 +11,7 @@
 		7242C76925783E730033CCAC /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242C76825783E730033CCAC /* ResultView.swift */; };
 		724FB29E257CD75800AE0F74 /* ExampleScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FB29D257CD75800AE0F74 /* ExampleScrollViewController.swift */; };
 		724FB2A0257CE44E00AE0F74 /* TextScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FB29F257CE44E00AE0F74 /* TextScrollViewController.swift */; };
+		724FB2A4257CF88500AE0F74 /* HtmlDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FB2A3257CF88500AE0F74 /* HtmlDecoderTests.swift */; };
 		726354D7255735B3000FCC57 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726354D6255735B3000FCC57 /* QuestionViewController.swift */; };
 		726551EB2578BF49007BB45E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726551EA2578BF49007BB45E /* Question.swift */; };
 		726551ED2578C4E8007BB45E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726551EC2578C4E8007BB45E /* StartViewController.swift */; };
@@ -53,6 +54,7 @@
 		7242C76825783E730033CCAC /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		724FB29D257CD75800AE0F74 /* ExampleScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleScrollViewController.swift; sourceTree = "<group>"; };
 		724FB29F257CE44E00AE0F74 /* TextScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScrollViewController.swift; sourceTree = "<group>"; };
+		724FB2A3257CF88500AE0F74 /* HtmlDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlDecoderTests.swift; sourceTree = "<group>"; };
 		726354D6255735B3000FCC57 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		726551EA2578BF49007BB45E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		726551EC2578C4E8007BB45E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				72902C1D254D7900007CD84D /* JU_QuizeTests.swift */,
 				72902C1F254D7900007CD84D /* Info.plist */,
+				724FB2A3257CF88500AE0F74 /* HtmlDecoderTests.swift */,
 			);
 			path = "JU QuizeTests";
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72902C1E254D7900007CD84D /* JU_QuizeTests.swift in Sources */,
+				724FB2A4257CF88500AE0F74 /* HtmlDecoderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
