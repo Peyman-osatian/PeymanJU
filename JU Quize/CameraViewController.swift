@@ -19,7 +19,6 @@ class CameraViewController: UIViewController {
         
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.isUserInteractionEnabled = false
         view.addSubview(imageView)
         
         imageView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
@@ -33,8 +32,7 @@ class CameraViewController: UIViewController {
         cameraButton.addTarget(self, action: #selector(cameraButtonHandler), for: .touchUpInside)
         view.addSubview(cameraButton)
         
-        cameraButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40).isActive = true
-        cameraButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        cameraButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         cameraButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
