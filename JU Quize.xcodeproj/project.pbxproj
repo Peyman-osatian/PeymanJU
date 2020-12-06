@@ -30,6 +30,7 @@
 		72AAD9C3257C33C20083B987 /* String+HtmlDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAD9C2257C33C20083B987 /* String+HtmlDecoding.swift */; };
 		72AAD9C5257C37500083B987 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAD9C4257C37500083B987 /* DatabaseManager.swift */; };
 		72AAD9C7257C3ABC0083B987 /* GameResultDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAD9C6257C3ABC0083B987 /* GameResultDatabaseManager.swift */; };
+		72ED9961257D49A000F2ACBE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ED9960257D49A000F2ACBE /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		72AAD9C2257C33C20083B987 /* String+HtmlDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HtmlDecoding.swift"; sourceTree = "<group>"; };
 		72AAD9C4257C37500083B987 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		72AAD9C6257C3ABC0083B987 /* GameResultDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultDatabaseManager.swift; sourceTree = "<group>"; };
+		72ED9960257D49A000F2ACBE /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				72AAD9C2257C33C20083B987 /* String+HtmlDecoding.swift */,
 				724FB29D257CD75800AE0F74 /* ExampleScrollViewController.swift */,
 				724FB29F257CE44E00AE0F74 /* TextScrollViewController.swift */,
+				72ED9960257D49A000F2ACBE /* CameraViewController.swift */,
 			);
 			path = "JU Quize";
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				726551EB2578BF49007BB45E /* Question.swift in Sources */,
 				7242C76925783E730033CCAC /* ResultView.swift in Sources */,
 				72AAD9BD257C19ED0083B987 /* GameResult+CoreDataProperties.swift in Sources */,
+				72ED9961257D49A000F2ACBE /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

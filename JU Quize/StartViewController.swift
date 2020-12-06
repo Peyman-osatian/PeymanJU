@@ -75,6 +75,8 @@ class StartViewController: UIViewController {
        // navigationController?.pushViewController(scrollViewController, animated: true)
         //let textScrollViewController = TextScrollViewController()
         //navigationController?.pushViewController(textScrollViewController, animated: true)
+        let cameraViewController = CameraViewController()
+        navigationController?.pushViewController(cameraViewController, animated: true)
     }
 }
 
