@@ -64,4 +64,8 @@ class StartViewController: UIViewController {
     }
    
 
+    @IBAction func exampleButtonHandler(_ sender: Any) {
+        let scrollViewController = ExampleScrollViewController()
+        navigationController?.pushViewController(scrollViewController, animated: true)
+    }
 }

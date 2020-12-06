@@ -45,12 +45,21 @@
                                     <action selector="highscoreButtonHandler:" destination="bta-fL-YU4" eventType="touchUpInside" id="kDE-Ri-BN4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nI-iX-TSa">
+                                <rect key="frame" x="177.5" y="533" width="59" height="30"/>
+                                <state key="normal" title="Click Me"/>
+                                <connections>
+                                    <action selector="exampleButtonHandler:" destination="bta-fL-YU4" eventType="touchUpInside" id="LDD-9z-gQZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="4nI-iX-TSa" firstAttribute="top" secondItem="Tt0-0N-PFR" secondAttribute="bottom" constant="20" id="5Cg-F4-ryR"/>
                             <constraint firstItem="S1t-V9-KAd" firstAttribute="centerY" secondItem="513-s9-dWB" secondAttribute="centerY" id="WE7-xo-Mwx"/>
                             <constraint firstItem="Tt0-0N-PFR" firstAttribute="centerX" secondItem="S1t-V9-KAd" secondAttribute="centerX" id="WIs-7k-MuZ"/>
                             <constraint firstItem="Tt0-0N-PFR" firstAttribute="top" secondItem="S1t-V9-KAd" secondAttribute="bottom" constant="20" id="qfS-li-aRq"/>
+                            <constraint firstItem="4nI-iX-TSa" firstAttribute="centerX" secondItem="Tt0-0N-PFR" secondAttribute="centerX" id="xAf-23-cd5"/>
                             <constraint firstItem="S1t-V9-KAd" firstAttribute="centerX" secondItem="513-s9-dWB" secondAttribute="centerX" id="xgu-J0-D52"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n50-Iu-iMM"/>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7242C76725783CBA0033CCAC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242C76625783CBA0033CCAC /* ResultViewController.swift */; };
 		7242C76925783E730033CCAC /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242C76825783E730033CCAC /* ResultView.swift */; };
+		724FB29E257CD75800AE0F74 /* ExampleScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FB29D257CD75800AE0F74 /* ExampleScrollViewController.swift */; };
 		726354D7255735B3000FCC57 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726354D6255735B3000FCC57 /* QuestionViewController.swift */; };
 		726551EB2578BF49007BB45E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726551EA2578BF49007BB45E /* Question.swift */; };
 		726551ED2578C4E8007BB45E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726551EC2578C4E8007BB45E /* StartViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		7242C76625783CBA0033CCAC /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		7242C76825783E730033CCAC /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		724FB29D257CD75800AE0F74 /* ExampleScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleScrollViewController.swift; sourceTree = "<group>"; };
 		726354D6255735B3000FCC57 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		726551EA2578BF49007BB45E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		726551EC2578C4E8007BB45E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				726551EC2578C4E8007BB45E /* StartViewController.swift */,
 				72AAD9BE257C217E0083B987 /* HighscoreTableViewController.swift */,
 				72AAD9C2257C33C20083B987 /* String+HtmlDecoding.swift */,
+				724FB29D257CD75800AE0F74 /* ExampleScrollViewController.swift */,
 			);
 			path = "JU Quize";
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			files = (
 				72AAD9BF257C217E0083B987 /* HighscoreTableViewController.swift in Sources */,
 				7242C76725783CBA0033CCAC /* ResultViewController.swift in Sources */,
+				724FB29E257CD75800AE0F74 /* ExampleScrollViewController.swift in Sources */,
 				726551ED2578C4E8007BB45E /* StartViewController.swift in Sources */,
 				72902C0E254D78FF007CD84D /* JU_Quize.xcdatamodeld in Sources */,
 				72902C04254D78FF007CD84D /* AppDelegate.swift in Sources */,
