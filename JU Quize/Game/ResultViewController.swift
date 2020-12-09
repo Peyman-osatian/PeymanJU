@@ -1,9 +1,9 @@
 //
 //  ResultViewController.swift
-//  JU Quize
+//  JuQuize
 //
-//  Created by Peyman Osatian on 2020-12-02.
-//  Copyright © 2020 Peyman Osatian. All rights reserved.
+//  Created by Mahsa  on 2020-12-02.
+//  Copyright © 2020 com.mahsa. All rights reserved.
 //
 
 import UIKit
@@ -16,11 +16,11 @@ class ResultViewController: UIViewController {
     override func loadView() {
         view = resultView
     }
-    
+    // resultview loaded here ..
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-
+        // button action
         resultView.button.addTarget(self, action: #selector(backButtonHandler), for:
             .touchUpInside)
 
@@ -30,7 +30,7 @@ class ResultViewController: UIViewController {
         super.viewDidAppear(true)
         resultView.startAnimation()
     }
-    
+    // backward function
     @objc private func backButtonHandler () {
         navigationController?.popToRootViewController(animated: true)
     }

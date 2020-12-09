@@ -2,8 +2,8 @@
 //  HighscoreTableViewController.swift
 //  JU Quize
 //
-//  Created by Peyman Osatian on 2020-12-05.
-//  Copyright © 2020 Peyman Osatian. All rights reserved.
+//  Created by Mahsa  on 2020-12-03.
+//  Copyright © 2020 com.mahsa. All rights reserved.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class HighscoreTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "highscoreIdentifier")
         setupFetchedResultsController()
     }
-    
+    // receive data from core
     private func setupFetchedResultsController() {
         let managedObjectContext = DatabaseManager.shared.managedObjectContext
         

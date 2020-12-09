@@ -1,9 +1,9 @@
 //
 //  QuestionViewController.swift
-//  JU Quize
+//  JuQuize
 //
-//  Created by Peyman Osatian on 2020-11-07.
-//  Copyright © 2020 Peyman Osatian. All rights reserved.
+//  Created by Mahsa  on 2020-12-02.
+//  Copyright © 2020 com.mahsa. All rights reserved.
 //
 
 import UIKit
@@ -11,13 +11,14 @@ import UIKit
 class QuestionViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var buttonAnswerD: UIButton!
-    @IBOutlet weak var buttonAnswerC: UIButton!
-    @IBOutlet weak var butoonAnswerB: UIButton!
     @IBOutlet weak var buttonAnswerA: UIButton!
+    @IBOutlet weak var butoonAnswerB: UIButton!
+    @IBOutlet weak var buttonAnswerC: UIButton!
+    @IBOutlet weak var buttonAnswerD: UIButton!
     
     private let gameResultDatabaseManager = GameResultDatabaseManager()
     private var haveWon = false
+    //question is coming from startviewController for asking questions
     var questions: [Question] = [] {
         didSet {
             question = questions.removeFirst()
@@ -26,7 +27,7 @@ class QuestionViewController: UIViewController {
     var question : Question?
     var numberOfQuestions = 0
     var rightAnswers = 0
-    
+    //buttons configure
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
@@ -36,7 +37,7 @@ class QuestionViewController: UIViewController {
         buttons.forEach{(button) in
             button?.layer.cornerRadius = 20
         }
-        
+        //html decode lables for questions and answers
         questionLabel.text = question?.question.htmlDecoded
         buttons.shuffle()
         let correctButton = buttons.removeFirst()
@@ -48,7 +49,7 @@ class QuestionViewController: UIViewController {
             })
     }
     
-
+  //answers alert (status) next question
     @IBAction func buttonAnswerAHandler(_ sender: Any) {
         if checkIfItIsTheRightAnswer(forButton: buttonAnswerA){
           showRightAnswerAlert(button: buttonAnswerA)
@@ -88,7 +89,7 @@ class QuestionViewController: UIViewController {
     
     private func showWrongAnswerAlert(button:UIButton){
         haveWon = false
-        UIView.transition(with: button, duration: 1.3, options: [.transitionCurlDown], animations: {
+        UIView.transition(with: button, duration: 1.3, options: [.transitionFlipFromTop], animations: {
             button.backgroundColor = .red
         }) { (_) in
             let alertController = UIAlertController (title:"WRONG😳", message : "maybe next time ..", preferredStyle: UIAlertController.Style.alert)
@@ -103,7 +104,7 @@ class QuestionViewController: UIViewController {
     private func showRightAnswerAlert(button:UIButton){
         haveWon = true
         rightAnswers += 1
-        UIView.transition(with: button, duration: 1.3, options: [.transitionCurlUp], animations: {
+        UIView.transition(with: button, duration: 1.3, options: [.transitionFlipFromBottom], animations: {
             button.backgroundColor = .green
         }) { (_) in
             let alertController = UIAlertController (title:"RIGHT", message : "YEAAAAAAAA It's correct", preferredStyle: UIAlertController.Style.alert)
@@ -124,12 +125,13 @@ class QuestionViewController: UIViewController {
             return
 
         }
+        //result report
         questionViewController.numberOfQuestions = numberOfQuestions
         questionViewController.rightAnswers = rightAnswers
         questionViewController.questions = questions
         navigationController?.pushViewController(questionViewController, animated: true)
     }
-    
+    //save into coredata (database)
     private func saveGameResult() {
         if gameResultDatabaseManager.create(withNumbersOfQuestions: numberOfQuestions, andRightAnswers: rightAnswers) != nil {
             gameResultDatabaseManager.save()

@@ -2,8 +2,8 @@
 //  StartViewController.swift
 //  JU Quize
 //
-//  Created by Peyman Osatian on 2020-12-03.
-//  Copyright © 2020 Peyman Osatian. All rights reserved.
+//  Created by Mahsa  on 2020-12-02.
+//  Copyright © 2020 com.mahsa. All rights reserved.
 //
 
 import UIKit
@@ -31,7 +31,7 @@ class StartViewController: UIViewController {
         navigationController?.pushViewController(highscoreTableViewController, animated: true)
     }
     
-    
+    // receiving questions from api url
     private func downloadQuestions(amount: Int) {
         guard let url = URL(string:
             "https://opentdb.com/api.php?amount=\(amount)&type=multiple") else {
@@ -42,6 +42,7 @@ class StartViewController: UIViewController {
                 print(error)
                 return
             }
+            //decoder questions
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let questionsResult = try? decoder.decode(QuestionsResult.self, from: data)
@@ -55,7 +56,9 @@ class StartViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
+    
+    // send data for next page
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let questionViewController = segue.destination as? QuestionViewController {
@@ -71,24 +74,24 @@ class StartViewController: UIViewController {
    
 
     @IBAction func exampleButtonHandler(_ sender: Any) {
-        let scrollViewController = ExampleScrollViewController()
-        navigationController?.pushViewController(scrollViewController, animated: true)
-        //let textScrollViewController = TextScrollViewController()
-        //navigationController?.pushViewController(textScrollViewController, animated: true)
+//        let scrollViewController = ExampleScrollViewController()
+//        navigationController?.pushViewController(scrollViewController, animated: true)
+        let textScrollViewController = TextScrollViewController()
+        navigationController?.pushViewController(textScrollViewController, animated: true)
 //        let cameraViewController = CameraViewController()
 //        navigationController?.pushViewController(cameraViewController, animated: true)
     }
 }
 
 extension StartViewController: UITextFieldDelegate {
-    
+    // find out text field editing has been done
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let name = textField.text else {
             return
         }
         UserDefaults.standard.set(name, forKey: "username")
     }
-    
+    //keyboard focused out
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

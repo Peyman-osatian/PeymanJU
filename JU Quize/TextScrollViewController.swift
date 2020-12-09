@@ -2,8 +2,8 @@
 //  TextScrollViewController.swift
 //  JU Quize
 //
-//  Created by Peyman Osatian on 2020-12-06.
-//  Copyright © 2020 Peyman Osatian. All rights reserved.
+//  Created by Mahsa  on 2020-12-04.
+//  Copyright © 2020 com.mahsa. All rights reserved.
 //
 
 import UIKit

@@ -2,8 +2,8 @@
 //  CameraViewController.swift
 //  JU Quize
 //
-//  Created by Peyman Osatian on 2020-12-06.
-//  Copyright © 2020 Peyman Osatian. All rights reserved.
+//  Created by Mahsa  on 2020-12-05.
+//  Copyright © 2020 com.mahsa. All rights reserved.
 //
 
 import UIKit
@@ -38,7 +38,7 @@ class CameraViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        //show  image sounds like a gallery
         if let directoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let fileUrl = directoryUrl.appendingPathComponent("image.jpg")
             if let image = UIImage(contentsOfFile: fileUrl.relativePath) {
@@ -57,7 +57,7 @@ class CameraViewController: UIViewController {
 }
 
 extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    //store images
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             imageView.image = image
